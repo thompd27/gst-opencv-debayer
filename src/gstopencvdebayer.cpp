@@ -323,8 +323,8 @@ gst_opencvdebayer_transform_frame (GstVideoFilter * filter,
   cv::Mat outputMat = cv::Mat(2000,4000,CV_8UC4,(char *) outframe->data[0],outframe->info.stride[0]);
   //cv::Mat outputMat;
   //cv::imwrite("/home/dj/bayer.png",inputMat);
-  cv::cvtColor(inputMat,temp,CV_BayerBG2BGR);
-  cv::cvtColor(temp,outputMat,CV_BGR2BGRA);
+  cv::cvtColor(inputMat,temp,cv::COLOR_BayerBG2BGR);
+  cv::cvtColor(temp,outputMat,cv::COLOR_BGR2BGRA);
   //cv::imwrite("/home/dj/color.png",outputMat);
   GST_DEBUG_OBJECT (opencvdebayer, "transform_complete");
 
